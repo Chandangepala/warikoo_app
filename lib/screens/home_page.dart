@@ -15,7 +15,8 @@ class _HomePageState extends State<HomePage> {
       drawer: NavBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('H O M E', style: TextStyle(fontFamily: 'Nunito', fontWeight: FontWeight.bold),),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:warikoo_app/bottom_nav/bottom_nav.dart';
 import 'package:warikoo_app/screens/home_page.dart';
+import 'package:warikoo_app/screens/under_construction.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -11,43 +12,66 @@ class NavBar extends StatelessWidget {
       child: ListView(
         children: [
           UserAccountsDrawerHeader(
-              accountName: Text('Codie Monk'),
-              accountEmail: Text('codie.monk@gmail.com'),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade600
-              ),
+            currentAccountPicture: CircleAvatar(
+              radius: 20,
+              backgroundImage: NetworkImage(
+                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
+            ),
+            accountName: Text('Codie Monk'),
+            accountEmail: Text('codie.monk@gmail.com'),
+            decoration: BoxDecoration(color: Colors.grey.shade800),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> BottomNav(mIndex: 0))),
+            leading: Icon(Icons.list_alt),
+            title: Text('My Courses'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => UnderConstructionPage())),
           ),
           ListTile(
             leading: Icon(Icons.menu_book_sharp),
-            title: Text('Books'),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNav(mIndex: 1))),
+            title: Text('eBooks'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => UnderConstructionPage())),
           ),
           ListTile(
-            leading: Icon(Icons.list_alt_sharp),
-            title: Text('Courses'),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNav(mIndex: 2))),
+            leading: Icon(Icons.mic_outlined),
+            title: Text('Podcast'),
+            onTap: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => UnderConstructionPage())),
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Profile'),
-            onTap: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNav(mIndex: 3)));
+            leading: Icon(Icons.newspaper),
+            title: Text('Newsletter'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => UnderConstructionPage()));
             },
+          ),
+          ListTile(
+            leading: Icon(Icons.wallpaper),
+            title: Text('Wallpaper'),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => UnderConstructionPage())),
           ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomNav(mIndex: 0))),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => UnderConstructionPage())),
           ),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),
-            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage())),
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => UnderConstructionPage())),
           )
         ],
       ),

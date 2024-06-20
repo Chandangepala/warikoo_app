@@ -4,6 +4,7 @@ import 'package:warikoo_app/screens/books_page.dart';
 import 'package:warikoo_app/screens/courses_page.dart';
 import 'package:warikoo_app/screens/home_page.dart';
 import 'package:warikoo_app/screens/profile_page.dart';
+import 'package:warikoo_app/screens/under_construction.dart';
 
 class BottomNav extends StatefulWidget {
   int mIndex;
